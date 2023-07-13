@@ -13,6 +13,9 @@
 		0DA68A232A601A9F00F3AAA4 /* TTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA68A222A601A9F00F3AAA4 /* TTableSection.swift */; };
 		0DA68A252A601B0F00F3AAA4 /* TaskListTableViewCell+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA68A242A601B0F00F3AAA4 /* TaskListTableViewCell+Model.swift */; };
 		0DA68A282A603DC000F3AAA4 /* Collection+SafeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA68A272A603DC000F3AAA4 /* Collection+SafeSubscript.swift */; };
+		0DA68A2A2A605D7900F3AAA4 /* TButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA68A292A605D7900F3AAA4 /* TButton.swift */; };
+		0DA68A2D2A605DBD00F3AAA4 /* TaskStatusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA68A2C2A605DBD00F3AAA4 /* TaskStatusButton.swift */; };
+		0DA83FEA2A6069A600BA8F03 /* TaskStatusButton+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA83FE92A6069A600BA8F03 /* TaskStatusButton+State.swift */; };
 		0DD86EFF2A5FC5CB002C8F07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD86EFE2A5FC5CB002C8F07 /* AppDelegate.swift */; };
 		0DD86F012A5FC5CB002C8F07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD86F002A5FC5CB002C8F07 /* SceneDelegate.swift */; };
 		0DD86F032A5FC5CB002C8F07 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD86F022A5FC5CB002C8F07 /* TaskListViewController.swift */; };
@@ -33,6 +36,9 @@
 		0DA68A222A601A9F00F3AAA4 /* TTableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTableSection.swift; sourceTree = "<group>"; };
 		0DA68A242A601B0F00F3AAA4 /* TaskListTableViewCell+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskListTableViewCell+Model.swift"; sourceTree = "<group>"; };
 		0DA68A272A603DC000F3AAA4 /* Collection+SafeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+SafeSubscript.swift"; sourceTree = "<group>"; };
+		0DA68A292A605D7900F3AAA4 /* TButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TButton.swift; sourceTree = "<group>"; };
+		0DA68A2C2A605DBD00F3AAA4 /* TaskStatusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStatusButton.swift; sourceTree = "<group>"; };
+		0DA83FE92A6069A600BA8F03 /* TaskStatusButton+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskStatusButton+State.swift"; sourceTree = "<group>"; };
 		0DD86EFB2A5FC5CB002C8F07 /* ToDocu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDocu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DD86EFE2A5FC5CB002C8F07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DD86F002A5FC5CB002C8F07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +77,7 @@
 		0DA68A1B2A60197000F3AAA4 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				0DA68A2B2A605DB600F3AAA4 /* Views */,
 				0DA68A1C2A60197900F3AAA4 /* TaskListTableViewCell.swift */,
 				0DA68A242A601B0F00F3AAA4 /* TaskListTableViewCell+Model.swift */,
 			);
@@ -83,6 +90,15 @@
 				0DA68A272A603DC000F3AAA4 /* Collection+SafeSubscript.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0DA68A2B2A605DB600F3AAA4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0DA68A2C2A605DBD00F3AAA4 /* TaskStatusButton.swift */,
+				0DA83FE92A6069A600BA8F03 /* TaskStatusButton+State.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		0DD86EF22A5FC5CB002C8F07 = {
@@ -160,6 +176,7 @@
 				0DA68A1E2A601A2900F3AAA4 /* TTableCell.swift */,
 				0DA68A222A601A9F00F3AAA4 /* TTableSection.swift */,
 				0DA68A202A601A4A00F3AAA4 /* TTableView.swift */,
+				0DA68A292A605D7900F3AAA4 /* TButton.swift */,
 			);
 			path = TViews;
 			sourceTree = "<group>";
@@ -236,12 +253,15 @@
 			files = (
 				0DA68A1D2A60197900F3AAA4 /* TaskListTableViewCell.swift in Sources */,
 				0DA68A232A601A9F00F3AAA4 /* TTableSection.swift in Sources */,
+				0DA83FEA2A6069A600BA8F03 /* TaskStatusButton+State.swift in Sources */,
 				0DA68A252A601B0F00F3AAA4 /* TaskListTableViewCell+Model.swift in Sources */,
+				0DA68A2D2A605DBD00F3AAA4 /* TaskStatusButton.swift in Sources */,
 				0DD86F222A5FC8B8002C8F07 /* TStackView.swift in Sources */,
 				0DA68A282A603DC000F3AAA4 /* Collection+SafeSubscript.swift in Sources */,
 				0DD86F242A5FD05C002C8F07 /* TaskListTableView.swift in Sources */,
 				0DD86F202A5FC89D002C8F07 /* TView.swift in Sources */,
 				0DD86F032A5FC5CB002C8F07 /* TaskListViewController.swift in Sources */,
+				0DA68A2A2A605D7900F3AAA4 /* TButton.swift in Sources */,
 				0DA68A1F2A601A2900F3AAA4 /* TTableCell.swift in Sources */,
 				0DA68A212A601A4A00F3AAA4 /* TTableView.swift in Sources */,
 				0DD86F1B2A5FC863002C8F07 /* TaskListResources.swift in Sources */,
