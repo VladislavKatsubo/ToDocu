@@ -12,6 +12,7 @@ protocol TaskListViewModelProtocol {
 
     func launch()
     func reloadModels()
+    func didTap(at task: TaskListTableViewCell.Model)
 }
 
 final class TaskListViewModel: TaskListViewModelProtocol {
@@ -28,11 +29,20 @@ final class TaskListViewModel: TaskListViewModelProtocol {
     func reloadModels() {
 
     }
+
+    func didTap(at task: TaskListTableViewCell.Model) {
+        print(task)
+    }
 }
 
 private extension TaskListViewModel {
     // MARK: - Private methods
     func setupModels() {
+        setupTaskListTableView()
+    }
 
+    func setupTaskListTableView() {
+        let models = Constants.mockCells
+        onStateChange?(.onTaskListTableView(models))
     }
 }

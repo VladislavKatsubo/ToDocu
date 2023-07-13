@@ -10,6 +10,7 @@ import UIKit
 struct TaskListResources {
     // MARK: - States
     enum State {
+        case onTaskListTableView([TaskListTableViewCell.Model])
     }
 
     // MARK: - Constants
@@ -18,6 +19,38 @@ struct TaskListResources {
         }
 
         enum Mocks {
+            static let mockCells: [TaskListTableViewCell.Model] = [
+                .init(
+                    taskTitle: "Fuck them all!",
+                    taskDescription: "Yebash!",
+                    dueDate: .now
+                ),
+                .init(
+                    taskTitle: "Fuck them all!",
+                    taskDescription: "Yebash!",
+                    dueDate: .now
+                ),
+                .init(
+                    taskTitle: "Fuck them all!",
+                    taskDescription: "Yebash!",
+                    dueDate: .now
+                ),
+                .init(
+                    taskTitle: "Fuck them all!",
+                    taskDescription: "Yebash!",
+                    dueDate: .now
+                ),
+                .init(
+                    taskTitle: "Fuck them all!",
+                    taskDescription: "Yebash!",
+                    dueDate: .now
+                ),
+                .init(
+                    taskTitle: "Fuck them all!",
+                    taskDescription: "Yebash!",
+                    dueDate: .now
+                )                
+            ]
         }
     }
 }

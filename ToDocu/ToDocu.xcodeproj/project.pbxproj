@@ -12,6 +12,7 @@
 		0DA68A212A601A4A00F3AAA4 /* TTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA68A202A601A4A00F3AAA4 /* TTableView.swift */; };
 		0DA68A232A601A9F00F3AAA4 /* TTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA68A222A601A9F00F3AAA4 /* TTableSection.swift */; };
 		0DA68A252A601B0F00F3AAA4 /* TaskListTableViewCell+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA68A242A601B0F00F3AAA4 /* TaskListTableViewCell+Model.swift */; };
+		0DA68A282A603DC000F3AAA4 /* Collection+SafeSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA68A272A603DC000F3AAA4 /* Collection+SafeSubscript.swift */; };
 		0DD86EFF2A5FC5CB002C8F07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD86EFE2A5FC5CB002C8F07 /* AppDelegate.swift */; };
 		0DD86F012A5FC5CB002C8F07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD86F002A5FC5CB002C8F07 /* SceneDelegate.swift */; };
 		0DD86F032A5FC5CB002C8F07 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD86F022A5FC5CB002C8F07 /* TaskListViewController.swift */; };
@@ -31,6 +32,7 @@
 		0DA68A202A601A4A00F3AAA4 /* TTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTableView.swift; sourceTree = "<group>"; };
 		0DA68A222A601A9F00F3AAA4 /* TTableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTableSection.swift; sourceTree = "<group>"; };
 		0DA68A242A601B0F00F3AAA4 /* TaskListTableViewCell+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskListTableViewCell+Model.swift"; sourceTree = "<group>"; };
+		0DA68A272A603DC000F3AAA4 /* Collection+SafeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+SafeSubscript.swift"; sourceTree = "<group>"; };
 		0DD86EFB2A5FC5CB002C8F07 /* ToDocu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDocu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DD86EFE2A5FC5CB002C8F07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DD86F002A5FC5CB002C8F07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 				0DA68A242A601B0F00F3AAA4 /* TaskListTableViewCell+Model.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		0DA68A262A603DB100F3AAA4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0DA68A272A603DC000F3AAA4 /* Collection+SafeSubscript.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		0DD86EF22A5FC5CB002C8F07 = {
@@ -128,6 +138,7 @@
 		0DD86F152A5FC816002C8F07 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0DA68A262A603DB100F3AAA4 /* Extensions */,
 				0DD86F1E2A5FC87E002C8F07 /* TViews */,
 			);
 			path = Common;
@@ -227,6 +238,7 @@
 				0DA68A232A601A9F00F3AAA4 /* TTableSection.swift in Sources */,
 				0DA68A252A601B0F00F3AAA4 /* TaskListTableViewCell+Model.swift in Sources */,
 				0DD86F222A5FC8B8002C8F07 /* TStackView.swift in Sources */,
+				0DA68A282A603DC000F3AAA4 /* Collection+SafeSubscript.swift in Sources */,
 				0DD86F242A5FD05C002C8F07 /* TaskListTableView.swift in Sources */,
 				0DD86F202A5FC89D002C8F07 /* TView.swift in Sources */,
 				0DD86F032A5FC5CB002C8F07 /* TaskListViewController.swift in Sources */,

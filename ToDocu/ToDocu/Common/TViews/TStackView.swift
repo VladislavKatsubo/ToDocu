@@ -7,7 +7,7 @@
 
 import UIKit
 
-class IStackView: UIStackView {
+class TStackView: UIStackView {
 
     init(axis: NSLayoutConstraint.Axis, distribution: UIStackView.Distribution = .fill, spacing: CGFloat = 0.0) {
         super.init(frame: .zero)
