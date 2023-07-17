@@ -1,10 +1,11 @@
 # ToDocu: A Simple Yet Effective To-Do List App
-<p float="left">
-  <img src="https://i.ibb.co/C7ghyjX/Simulator-Screen-Shot-i-Phone-12-Pro-Max-2023-07-17-at-15-06-09.png" width="200" />
-  <img src="https://i.ibb.co/hR3Vk0p/Simulator-Screen-Shot-i-Phone-12-Pro-Max-2023-07-17-at-15-06-14.png" width="200" />
-  <img src="https://i.ibb.co/JQW3sWc/Simulator-Screen-Shot-i-Phone-12-Pro-Max-2023-07-17-at-15-06-30.png" width="200" />
-  <img src="https://i.ibb.co/wQS4X8s/Simulator-Screen-Shot-i-Phone-12-Pro-Max-2023-07-17-at-15-06-46.png" width="200" />
+
+<a href="https://ibb.co/HHRcwmk"><img src="https://i.ibb.co/87GyvFS/Simulator-Screen-Shot-i-Phone-14-Pro-Max-2023-07-17-at-16-30-54.png" alt="Simulator-Screen-Shot-i-Phone-14-Pro-Max-2023-07-17-at-16-30-54" border="0"></a>
+<a href="https://ibb.co/M1rGr5m"><img src="https://i.ibb.co/qgKWKFv/Simulator-Screen-Shot-i-Phone-14-Pro-Max-2023-07-17-at-16-31-15.png" alt="Simulator-Screen-Shot-i-Phone-14-Pro-Max-2023-07-17-at-16-31-15" border="0"></a>
+<a href="https://ibb.co/vQyNbZ1"><img src="https://i.ibb.co/7RM3H2v/Simulator-Screen-Shot-i-Phone-14-Pro-Max-2023-07-17-at-16-31-23.png" alt="Simulator-Screen-Shot-i-Phone-14-Pro-Max-2023-07-17-at-16-31-23" border="0"></a>
+<a href="https://ibb.co/1qWWKf0"><img src="https://i.ibb.co/MV00pDg/Simulator-Screen-Shot-i-Phone-14-Pro-Max-2023-07-17-at-16-34-04.png" alt="Simulator-Screen-Shot-i-Phone-14-Pro-Max-2023-07-17-at-16-34-04" border="0"></a>
 </p>
+
 ## Description
 
 ToDocu is an iOS application that serves as a straightforward, efficient to-do list manager. It's an exemplar of clean, maintainable code built using MVVM+C architecture, SOLID principles, Dependency Injection, and UIKit.
