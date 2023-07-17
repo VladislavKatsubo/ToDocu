@@ -1,5 +1,10 @@
 # ToDocu: A Simple Yet Effective To-Do List App
-
+<p float="left">
+  <img src="https://i.ibb.co/C7ghyjX/Simulator-Screen-Shot-i-Phone-12-Pro-Max-2023-07-17-at-15-06-09.png" width="200" />
+  <img src="https://i.ibb.co/hR3Vk0p/Simulator-Screen-Shot-i-Phone-12-Pro-Max-2023-07-17-at-15-06-14.png" width="200" />
+  <img src="https://i.ibb.co/JQW3sWc/Simulator-Screen-Shot-i-Phone-12-Pro-Max-2023-07-17-at-15-06-30.png" width="200" />
+  <img src="https://i.ibb.co/wQS4X8s/Simulator-Screen-Shot-i-Phone-12-Pro-Max-2023-07-17-at-15-06-46.png" width="200" />
+</p>
 ## Description
 
 ToDocu is an iOS application that serves as a straightforward, efficient to-do list manager. It's an exemplar of clean, maintainable code built using MVVM+C architecture, SOLID principles, Dependency Injection, and UIKit.
