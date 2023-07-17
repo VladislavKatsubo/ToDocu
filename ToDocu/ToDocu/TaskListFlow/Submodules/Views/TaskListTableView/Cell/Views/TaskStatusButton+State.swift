@@ -8,7 +8,7 @@
 import UIKit
 
 extension TaskStatusButtonView {
-    enum TaskStatus {
+    enum TaskStatus: Codable {
         case done
         case inProgress
 

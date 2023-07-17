@@ -19,8 +19,15 @@ final class TaskListViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupItems()
         setupViewModel()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.viewModel?.reloadModels()
     }
 
     // MARK: - Configure
@@ -38,6 +45,8 @@ private extension TaskListViewController {
             switch state {
             case .onTaskListTableView(let models):
                 self.tableView.configure(with: models)
+            case .onReloadTableViewRow(let index, let currentTasks):
+                self.tableView.reloadRow(at: index, with: currentTasks)
             }
         }
         self.viewModel?.launch()
@@ -45,14 +54,22 @@ private extension TaskListViewController {
 
     func setupItems() {
         view.backgroundColor = .systemBackground
+
         setupTableView()
+        setupNavBar()
     }
 
     func setupTableView() {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.onTap = { [weak self] task in
-            self?.viewModel?.didTap(at: task)
+        tableView.onTap = { [weak self] index in
+            self?.viewModel?.didTapCell(at: index)
+        }
+        tableView.onTaskStatusTap = { [weak self] index in
+            self?.viewModel?.didTapTaskStatus(at: index)
+        }
+        tableView.onDeleteTask = { [weak self] index in
+            self?.viewModel?.didSwipeToDeleteTask(at: index)
         }
 
         NSLayoutConstraint.activate([
@@ -61,5 +78,15 @@ private extension TaskListViewController {
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
+    }
+
+    func setupNavBar() {
+        self.navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .add, target: self, action: #selector(addTask))
+        self.title = Constants.viewControllerTitle
+    }
+
+    @objc
+    func addTask() {
+        self.viewModel?.didTapAddTaskButton()
     }
 }

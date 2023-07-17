@@ -17,7 +17,9 @@ final class TaskListTableView: TView {
 
     private var models: [TaskListTableViewCell.Model] = []
 
-    var onTap: ((TaskListTableViewCell.Model) -> Void)?
+    var onTap: ((Int) -> Void)?
+    var onTaskStatusTap: ((Int) -> Void)?
+    var onDeleteTask: ((Int) -> Void)?
 
     // MARK: - Public methods
     override func didLoad() {
@@ -29,6 +31,13 @@ final class TaskListTableView: TView {
     func configure(with models: [TaskListTableViewCell.Model]) {
         self.models = models
         self.tableView.reloadData()
+    }
+
+    // MARK: - Public methods
+    func reloadRow(at index: Int, with models: [TaskListTableViewCell.Model]) {
+        self.models = models
+        let indexPath = IndexPath(row: index, section: 0)
+        self.tableView.reloadRows(at: [indexPath], with: .none)
     }
 }
 
@@ -67,14 +76,32 @@ extension TaskListTableView: UITableViewDataSource {
         let model = models[safe: indexPath.row]
         cell.configure(with: model)
 
+        cell.onTaskStatusTap = { [weak self] in
+            self?.onTaskStatusTap?(indexPath.row)
+        }
+
         return cell
     }
 }
 
 extension TaskListTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let model = models[safe: indexPath.row] else { return }
+        onTap?(indexPath.row)
+    }
 
-        onTap?(model)
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [weak self] (action, view, completionHandler) in
+            self?.models.remove(at: indexPath.row)
+
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+
+            completionHandler(true)
+            self?.onDeleteTask?(indexPath.row)
+        }
+
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+
+        return configuration
     }
 }

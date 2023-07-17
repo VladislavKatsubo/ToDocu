@@ -8,12 +8,13 @@
 import UIKit
 
 final class TaskListFactory {
-    func makeViewController() -> UIViewController {
-        let viewModel = TaskListViewModel()
+    func makeViewController(with handlers: TaskListResources.Handlers) -> UIViewController {
+        let context: AppContext = AppDelegate.shared.context
+        let viewModel = TaskListViewModel(context: context, handlers: handlers)
         let viewController = TaskListViewController()
 
         viewController.configure(with: viewModel)
-
+        
         return viewController
     }
 }

@@ -17,14 +17,14 @@ final class TaskStatusButtonView: TView {
     private let innerCircleLayer = CAShapeLayer()
     private let button = TButton()
 
-    private var taskStatus: TaskStatus = .inProgress {
+    var taskStatus: TaskStatus = .inProgress {
         didSet {
             self.borderLayer.strokeColor = taskStatus.borderColor.cgColor
             self.innerCircleLayer.fillColor = taskStatus.innerCircleColor.cgColor
         }
     }
 
-    var onTap: ((TaskStatus?) -> Void)?
+    var onTap: (() -> Void)?
 
     // MARK: - Lifecycle
     override func didLoad() {
@@ -39,8 +39,8 @@ final class TaskStatusButtonView: TView {
     }
 
     // MARK: - Public methods
-    func toggleStatusButton() {
-        self.toggleTaskStatus()
+    func reset() {
+        taskStatus = .inProgress
     }
 }
 
@@ -94,8 +94,7 @@ private extension TaskStatusButtonView {
         button.backgroundColor = .clear
 
         button.onTap = { [weak self] in
-            self?.toggleTaskStatus()
-            self?.onTap?(self?.taskStatus)
+            self?.onTap?()
         }
 
         NSLayoutConstraint.activate([
@@ -104,14 +103,5 @@ private extension TaskStatusButtonView {
             button.trailingAnchor.constraint(equalTo: trailingAnchor),
             button.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
-    }
-
-    func toggleTaskStatus() {
-        switch taskStatus {
-        case .done:
-            taskStatus = .inProgress
-        case .inProgress:
-            taskStatus = .done
-        }
     }
 }

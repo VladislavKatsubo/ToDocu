@@ -20,7 +20,7 @@ final class TaskListTableViewCell: TTableCell {
         static let containerViewInset: CGFloat = -10.0
 
         static let containerViewCornerRadius: CGFloat = 20.0
-        static let containerViewShadowRadius: CGFloat = 10.0
+        static let containerViewShadowRadius: CGFloat = 5.0
         static let containerViewShadowOpacity: Float = 0.3
         static let containerViewShadowOffset: CGSize = CGSize(width: 3.0, height: 3.0)
 
@@ -36,7 +36,8 @@ final class TaskListTableViewCell: TTableCell {
     private let verticalStackView = TStackView(axis: .vertical, spacing: Constants.verticalStackViewSpacing)
     private let taskTitleLabel = UILabel()
     private let taskDescriptionLabel = UILabel()
-    private let taskDueDateLabel = UILabel()
+
+    var onTaskStatusTap: (() -> Void)?
 
     // MARK: - Public methods
     override func didLoad() {
@@ -46,9 +47,13 @@ final class TaskListTableViewCell: TTableCell {
 
     // MARK: - Configure
     func configure(with model: Model?) {
-        self.taskTitleLabel.text = model?.taskTitle
-        self.taskDescriptionLabel.text = model?.taskDescription
-        self.taskDueDateLabel.text = "24.07.1996 08:00"
+        guard let model = model else { return }
+
+        self.taskTitleLabel.text = model.taskTitle
+        self.taskDescriptionLabel.text = model.taskDescription
+        self.statusButton.taskStatus = model.status
+        
+        self.changeAppearance(for: model.status)
     }
 }
 
@@ -60,7 +65,6 @@ private extension TaskListTableViewCell {
         setupVerticalStackView()
         setupTaskTitleLabel()
         setupTaskDescriptionLabel()
-        setupTaskDueDateLabel()
     }
 
     func setupContainerView() {
@@ -77,7 +81,6 @@ private extension TaskListTableViewCell {
             containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.containerViewOffset),
             containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: Constants.containerViewInset),
             containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: Constants.containerViewInset),
-            containerView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])
     }
 
@@ -85,9 +88,9 @@ private extension TaskListTableViewCell {
     func setupTaskStatusButtonView() {
         containerView.addSubview(statusButton)
         statusButton.translatesAutoresizingMaskIntoConstraints = false
-
-        statusButton.onTap = { [weak self] status in
-            self?.changeAppearance(for: status)
+        
+        statusButton.onTap = { [weak self] in
+            self?.onTaskStatusTap?()
         }
 
         NSLayoutConstraint.activate([
@@ -104,32 +107,26 @@ private extension TaskListTableViewCell {
 
         verticalStackView.addArrangedSubview(taskTitleLabel)
         verticalStackView.addArrangedSubview(taskDescriptionLabel)
-        verticalStackView.addArrangedSubview(taskDueDateLabel)
 
         NSLayoutConstraint.activate([
             verticalStackView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: Constants.verticalStackViewOffset),
             verticalStackView.leadingAnchor.constraint(equalTo: statusButton.trailingAnchor, constant: Constants.verticalStackViewOffset),
             verticalStackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: Constants.verticalStackViewInset),
             verticalStackView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: Constants.verticalStackViewInset),
-            verticalStackView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor)
+//            verticalStackView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor)
         ])
     }
 
     func setupTaskTitleLabel() {
         taskTitleLabel.font = Constants.taskTitleLabelFont
         taskTitleLabel.textColor = Constants.taskTitleLabelFontColor
+        taskTitleLabel.numberOfLines = 1
     }
 
     func setupTaskDescriptionLabel() {
         taskDescriptionLabel.font = Constants.descriptionLabelFont
         taskDescriptionLabel.textColor = Constants.secondaryLabelsFontColor
-
         taskDescriptionLabel.numberOfLines = 3
-    }
-
-    func setupTaskDueDateLabel() {
-        taskDueDateLabel.font = Constants.dueDateLabelFont
-        taskDueDateLabel.textColor = Constants.secondaryLabelsFontColor
     }
 
     func changeAppearance(for status: TaskStatusButtonView.TaskStatus?) {
@@ -139,7 +136,18 @@ private extension TaskListTableViewCell {
         case .inProgress:
             self.taskTitleLabel.textColor = Constants.taskTitleLabelFontColor
         case .none:
-            break
+            self.taskTitleLabel.textColor = Constants.taskTitleLabelFontColor
         }
+    }
+}
+
+extension TaskListTableViewCell {
+    // MARK: - Reuse
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        statusButton.reset()
+        taskTitleLabel.text = nil
+        taskDescriptionLabel.text = nil
+        self.changeAppearance(for: .none)
     }
 }
