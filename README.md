@@ -1,11 +1,8 @@
 # ToDocu: A Simple Yet Effective To-Do List App
 
-<p float="left">
-  <img src="https://ibb.co/HHRcwmk" width="200" />
-  <img src="https://i.ibb.co/hR3Vk0p/Simulator-Screen-Shot-i-Phone-12-Pro-Max-2023-07-17-at-15-06-14.png" width="200" />
-  <img src="https://i.ibb.co/JQW3sWc/Simulator-Screen-Shot-i-Phone-12-Pro-Max-2023-07-17-at-15-06-30.png" width="200" />
-  <img src="https://i.ibb.co/wQS4X8s/Simulator-Screen-Shot-i-Phone-12-Pro-Max-2023-07-17-at-15-06-46.png" width="200" />
-</p>
+# ToDocu
+
+![App Screen Recording](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDh1b2toZjl4ZTNkNTUyb2NwM3Y1dm1vOXV3NDZhNDMwaDlsaXppcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NQ32xra2Cv1c0kQgt9/giphy.gif)
 
 
 ## Description
