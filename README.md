@@ -1,5 +1,6 @@
 # ToDocu: A Simple Yet Effective To-Do List App
 
+<p float = "left>
 <a href="https://ibb.co/HHRcwmk"><img src="https://i.ibb.co/87GyvFS/Simulator-Screen-Shot-i-Phone-14-Pro-Max-2023-07-17-at-16-30-54.png" alt="Simulator-Screen-Shot-i-Phone-14-Pro-Max-2023-07-17-at-16-30-54" border="0"></a>
 <a href="https://ibb.co/M1rGr5m"><img src="https://i.ibb.co/qgKWKFv/Simulator-Screen-Shot-i-Phone-14-Pro-Max-2023-07-17-at-16-31-15.png" alt="Simulator-Screen-Shot-i-Phone-14-Pro-Max-2023-07-17-at-16-31-15" border="0"></a>
 <a href="https://ibb.co/vQyNbZ1"><img src="https://i.ibb.co/7RM3H2v/Simulator-Screen-Shot-i-Phone-14-Pro-Max-2023-07-17-at-16-31-23.png" alt="Simulator-Screen-Shot-i-Phone-14-Pro-Max-2023-07-17-at-16-31-23" border="0"></a>
